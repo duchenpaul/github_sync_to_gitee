@@ -20,17 +20,12 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        git clone https://github.com/openwrt/openwrt.git
-
-    - name: Change settings
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        cd openwrt && git remote remove origin && git remote add origin https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt.git
+        git clone --bare https://github.com/openwrt/openwrt.git
 
     - name: Push repo
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        cd openwrt && git push --force
+        cd openwrt && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt.git
+
     
