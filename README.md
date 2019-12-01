@@ -1,1 +1,2 @@
-# openwrt_mirror_to_gitee
+# openwrt mirror to gitee
+Github action to mirror [Offical openwrt](https://github.com/openwrt/openwrt) to gitee
