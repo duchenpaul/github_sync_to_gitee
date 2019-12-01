@@ -26,6 +26,6 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        cd openwrt && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt.git
+        cd openwrt.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt.git
 
     
