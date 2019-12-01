@@ -1,0 +1,36 @@
+name: OpenWrt mirror to gitee
+
+on: 
+  release:
+    types: [published]
+  push:
+    branches: 
+      - master
+ schedule:
+   - cron: 0 8 * * *
+#  watch:
+#    types: [started]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Clone repo
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        git clone https://github.com/openwrt/openwrt.git
+
+    - name: Change settings
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        cd openwrt && git remote remove origin && git remote add origin https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt.git
+
+    - name: Push repo
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        git push --force
+    
