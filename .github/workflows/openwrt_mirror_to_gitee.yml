@@ -32,5 +32,5 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        git push --force
+        cd openwrt && git push --force
     
