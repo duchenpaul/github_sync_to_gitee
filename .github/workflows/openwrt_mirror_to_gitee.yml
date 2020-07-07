@@ -28,6 +28,6 @@ jobs:
         DEBIAN_FRONTEND: noninteractive
       run: |
         cd openwrt.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt.git && cd ..
-        cd Script.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/Script.git && cd ..
+        cd Script.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/QuanX_Script.git && cd ..
 
     
