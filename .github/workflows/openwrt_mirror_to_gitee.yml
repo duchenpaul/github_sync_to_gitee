@@ -26,7 +26,7 @@ jobs:
         git clone --bare https://git.openwrt.org/project/luci.git
         git clone --bare https://git.openwrt.org/feed/routing.git
         git clone --bare https://git.openwrt.org/feed/telephony.git
-        git clone --bare https://github.com/rosywrt/luci.git
+        git clone --bare https://github.com/rosywrt/luci.git rosywrt_luci
 
     - name: Push repo
       env:
