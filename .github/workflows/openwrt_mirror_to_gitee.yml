@@ -38,6 +38,6 @@ jobs:
         cd luci.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt_project_luci.git && cd ..
         cd routing.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt_feed_routing.git && cd ..
         cd telephony.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt_feed_telephony.git && cd ..
-        cd rosywrt_luci.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/rosywrt_luci.git && cd ..
+        cd rosywrt_luci && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/rosywrt_luci.git && cd ..
 
     
