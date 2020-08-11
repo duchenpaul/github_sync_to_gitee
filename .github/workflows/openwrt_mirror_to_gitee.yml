@@ -14,30 +14,17 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-
+    
     steps:
-    - name: Clone repo
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Sync repo
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        git clone --bare https://github.com/NobyDa/Script.git
-        git clone --bare https://github.com/openwrt/openwrt.git
-        git clone --bare https://git.openwrt.org/feed/packages.git
-        git clone --bare https://git.openwrt.org/project/luci.git
-        git clone --bare https://git.openwrt.org/feed/routing.git
-        git clone --bare https://git.openwrt.org/feed/telephony.git
-        git clone --bare https://github.com/rosywrt/luci.git rosywrt_luci
+        export USERNAME=${{ secrets.USERNAME }}
+        export PASSWORD=${{ secrets.PASSWORD }}
 
-    - name: Push repo
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        cd openwrt.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt.git && cd ..
-        cd Script.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/QuanX_Script.git && cd ..
-        cd packages.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt_feed_packages.git && cd ..
-        cd luci.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt_project_luci.git && cd ..
-        cd routing.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt_feed_routing.git && cd ..
-        cd telephony.git && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/openwrt_feed_telephony.git && cd ..
-        cd rosywrt_luci && git push --mirror https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@gitee.com/duchenpaul/rosywrt_luci.git && cd ..
-
+        python3 ./sync_repo.py
     

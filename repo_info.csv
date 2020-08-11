@@ -1,0 +1,8 @@
+source_repo,target_repo,repo_dir
+https://github.com/NobyDa/Script.git,gitee.com/duchenpaul/openwrt.git,
+https://github.com/openwrt/openwrt.git,gitee.com/duchenpaul/QuanX_Script.git,
+https://git.openwrt.org/feed/packages.git,gitee.com/duchenpaul/openwrt_feed_packages.git,
+https://git.openwrt.org/project/luci.git,gitee.com/duchenpaul/openwrt_project_luci.git,
+https://git.openwrt.org/feed/routing.git,gitee.com/duchenpaul/openwrt_feed_routing.git,
+https://git.openwrt.org/feed/telephony.git,gitee.com/duchenpaul/openwrt_feed_telephony.git,
+https://github.com/rosywrt/luci.git,gitee.com/duchenpaul/rosywrt_luci.git,rosywrt_luci
