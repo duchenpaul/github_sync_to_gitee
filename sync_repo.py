@@ -19,7 +19,7 @@ def read_csv(repo_info_csv):
 
 def sync_repo(source_repo, target_repo, repo_dir=None):
     print('Sync {} to {}...'.format(source_repo, target_repo))
-    repo_dir = repo_dir if repo_dir else ''
+    repo_dir = repo_dir if repo_dir else source_repo.split('/')[-1]
     args = {
         'source_repo': source_repo,
         'target_repo': target_repo,
@@ -27,7 +27,7 @@ def sync_repo(source_repo, target_repo, repo_dir=None):
         'USERNAME': USERNAME,
         'PASSWORD': PASSWORD,
     }
-    command = 'git clone --bare {source_repo} {repo_dir} && cd openwrt.git && git push --mirror https://{USERNAME}:{PASSWORD}@{target_repo} && cd ..'.format(**args)
+    command = 'git clone --bare {source_repo} {repo_dir} && cd {repo_dir} && git push --mirror https://{USERNAME}:{PASSWORD}@{target_repo} && cd ..'.format(**args)
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
     process.wait()
     print('Return code: {}'.format(process.returncode))
