@@ -29,7 +29,9 @@ def sync_repo(source_repo, target_repo, repo_dir=None):
     }
     command = 'git clone --bare {source_repo} {repo_dir} && cd {repo_dir} && git push --mirror https://{USERNAME}:{PASSWORD}@{target_repo} && cd ..'.format(**args)
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
+    out, err = process.communicate()
     process.wait()
+    print(out)
     print('Return code: {}'.format(process.returncode))
 
 
