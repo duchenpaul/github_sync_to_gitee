@@ -20,12 +20,19 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
+    - name: Download dependencies
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        pip3 install requests
+
     - name: Sync repo
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
         export USERNAME=${{ secrets.USERNAME }}
         export PASSWORD=${{ secrets.PASSWORD }}
+        export GITEE_PAT=${{ secrets.GITEE_PAT }}
 
         python3 ./sync_repo.py
     
