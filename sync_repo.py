@@ -58,7 +58,7 @@ def sync_repo(source_repo, target_repo, repo_dir=None):
         'PASSWORD': PASSWORD,
         'tmp_dir': tmp_dir
     }
-    command = 'rm -rf {tmp_dir} && mkdir -p {tmp_dir} && cd {tmp_dir} && git clone --bare {source_repo} {tmp_dir}/{repo_dir} && cd {tmp_dir}/{repo_dir} && git push --mirror https://{USERNAME}:{PASSWORD}@{target_repo}'.format(
+    command = 'rm -rf {tmp_dir} && mkdir -p {tmp_dir} && cd {tmp_dir} && git clone --bare {source_repo} {tmp_dir}/{repo_dir} && cd {tmp_dir}/{repo_dir} && git push --force --mirror https://{USERNAME}:{PASSWORD}@{target_repo}'.format(
         **args)
     logging.info(command)
     process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE)
