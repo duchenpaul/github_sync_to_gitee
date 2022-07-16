@@ -1,6 +1,5 @@
 import os
 import csv
-from re import L
 import subprocess
 import requests
 import logging
