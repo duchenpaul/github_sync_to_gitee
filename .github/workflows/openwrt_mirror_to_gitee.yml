@@ -15,7 +15,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    timeout-minutes: 60
+    timeout-minutes: 100
     
     steps:
     - name: Checkout
@@ -30,7 +30,7 @@ jobs:
     - name: Sync repo
       uses: nick-fields/retry@v2
       with:
-        timeout_minutes: 55
+        timeout_minutes: 30
         max_attempts: 3
         command: |
           export USERNAME=${{ secrets.USERNAME }}
