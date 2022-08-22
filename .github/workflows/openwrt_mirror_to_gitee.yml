@@ -32,7 +32,7 @@ jobs:
     - name: Sync repo
       uses: nick-fields/retry@v2
       with:
-        timeout_minutes: 30
+        timeout_minutes: 120
         max_attempts: 3
         command: |
           export USERNAME=${{ secrets.USERNAME }}
