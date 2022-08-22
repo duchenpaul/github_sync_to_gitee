@@ -5,6 +5,8 @@ import requests
 import logging
 import sys
 import json
+from retry import retry
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -79,6 +81,7 @@ def get_all_repo():
     return [x["name"] for x in all_repo_dict]
 
 
+@retry((ConnectionResetError, urllib3.exceptions.ProtocolError, requests.exceptions.ConnectionError), tries=10, delay=5, jitter=5)
 def update_repo_info(source_repo, repo_name):
     url = "https://gitee.com/api/v5/repos/{}/{}".format(USERNAME, repo_name)
 

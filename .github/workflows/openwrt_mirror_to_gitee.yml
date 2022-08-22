@@ -25,7 +25,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        pip3 install requests
+        pip3 install -r requirements
 
     - name: Sync repo
       uses: nick-fields/retry@v2
