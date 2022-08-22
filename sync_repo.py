@@ -1,10 +1,12 @@
 import os
 import csv
 import subprocess
-import requests
 import logging
 import sys
 import json
+import urllib3
+import requests
+
 from retry import retry
 
 
