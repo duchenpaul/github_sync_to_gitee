@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/dracula/homer.git,gitee.com/duchenpaul/dracula-homer.git,
 https://github.com/walkxcode/homer-theme.git,gitee.com/duchenpaul/homer-theme.git,
 https://github.com/gpakosz/.tmux.git,gitee.com/duchenpaul/oh-my-tmux.git,
 https://github.com/T-vK/ESP32-BLE-Keyboard.git,gitee.com/duchenpaul/ESP32-BLE-Keyboard.git,
