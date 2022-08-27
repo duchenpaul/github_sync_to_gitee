@@ -96,7 +96,7 @@ def update_repo_info(source_repo, repo_name):
         "can_comment": "true"
     }
     resp = requests.patch(url, json=json_data)
-    if resp.status_code == 200:
+    if resp.status_code in (200, 201):
         logging.info('Repo {} updated successfully'.format(repo_name))
     else:
         logging.error('Repo {} update failed, return code: {} return message {}'.format(
@@ -116,7 +116,7 @@ def create_repo(source_repo, repo_name):
         "private": "false",
     }
     resp = requests.post(url, json=json_data)
-    if resp.status_code == 200:
+    if resp.status_code in (200, 201):
         logging.info('Repo {} created successfully'.format(repo_name))
     else:
         logging.error('Repo {} create failed, return code: {} return message {}'.format(
