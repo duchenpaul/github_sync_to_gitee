@@ -99,8 +99,8 @@ def update_repo_info(source_repo, repo_name):
     if resp.status_code == 200:
         logging.info('Repo {} updated successfully'.format(repo_name))
     else:
-        logging.error('Repo {} update failed, return message {}'.format(
-            repo_name, resp.text))
+        logging.error('Repo {} update failed, return code: {} return message {}'.format(
+            repo_name, resp.status_code, resp.text))
 
 
 def create_repo(source_repo, repo_name):
@@ -119,8 +119,8 @@ def create_repo(source_repo, repo_name):
     if resp.status_code == 200:
         logging.info('Repo {} created successfully'.format(repo_name))
     else:
-        logging.error('Repo {} create failed, return message {}'.format(
-            repo_name, resp.text))
+        logging.error('Repo {} create failed, return code: {} return message {}'.format(
+            repo_name, resp.status_code, resp.text))
 
 
 def main():
