@@ -48,6 +48,7 @@ def get_repo_name(target_repo):
     return target_repo.split('/')[-1].replace('.git', '')
 
 
+@retry((AssertionError), tries=10, delay=5, jitter=5)
 def sync_repo(source_repo, target_repo, repo_dir=None):
     logging.info('Sync {} to {}...'.format(source_repo, target_repo))
     repo_dir = repo_dir if repo_dir else source_repo.split('/')[-1]
@@ -72,6 +73,7 @@ def sync_repo(source_repo, target_repo, repo_dir=None):
         logging.error('Return code: {}'.format(process.returncode))
     else:
         logging.info('Return code: {}'.format(process.returncode))
+    assert process.returncode == 0
 
 
 def get_all_repo():
