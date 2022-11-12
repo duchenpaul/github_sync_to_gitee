@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/gekmihesg/ansible-openwrt.git,gitee.com/gekmihesg/ansible-openwrt.git,
 https://github.com/ngosang/trackerslist.git,gitee.com/duchenpaul/trackerslist.git,
 https://github.com/vim-airline/vim-airline.git,gitee.com/duchenpaul/vim-airline.git,
 https://github.com/zsh-users/zsh-autosuggestions,gitee.com/duchenpaul/zsh-autosuggestions.git,
