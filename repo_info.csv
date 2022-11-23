@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/Dreamacro/clash-dashboard.git,gitee.com/duchenpaul/clash-dashboard.git,
 https://github.com/gekmihesg/ansible-openwrt.git,gitee.com/duchenpaul/ansible-openwrt.git,
 https://github.com/ngosang/trackerslist.git,gitee.com/duchenpaul/trackerslist.git,
 https://github.com/vim-airline/vim-airline.git,gitee.com/duchenpaul/vim-airline.git,
