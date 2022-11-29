@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/razonyang/hugo-theme-bootstrap-skeleton.git,gitee.com/duchenpaul/hugo-theme-bootstrap-skeleton.git,
 https://github.com/razonyang/hugo-theme-bootstrap.git,gitee.com/duchenpaul/hugo-theme-bootstrap.git,
 https://github.com/haishanh/yacd.git,gitee.com/duchenpaul/yacd.git,
 https://github.com/Dreamacro/clash-dashboard.git,gitee.com/duchenpaul/clash-dashboard.git,
