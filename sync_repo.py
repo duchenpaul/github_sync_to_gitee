@@ -115,7 +115,7 @@ def create_repo(source_repo, repo_name):
         "has_issues": "false",
         "has_wiki": "false",
         "can_comment": "false",
-        "private": "false",
+        "private": "true",
     }
     resp = requests.post(url, json=json_data)
     if resp.status_code in (200, 201):
