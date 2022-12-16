@@ -77,7 +77,7 @@ def sync_repo(source_repo, target_repo, repo_dir=None):
 
 
 def get_all_repo():
-    url = "https://gitee.com/api/v5/user/repos?access_token={GITEE_PAT}&sort=full_name&per_page=2000".format(
+    url = "https://gitee.com/api/v5/user/repos?access_token={GITEE_PAT}&sort=full_name&per_page=100".format(
         GITEE_PAT=GITEE_PAT)
     resp = requests.get(url)
     response_text = resp.text
