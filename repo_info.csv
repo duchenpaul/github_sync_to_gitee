@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/zkz098/hexo-theme-shokaX.git,gitee.com/duchenpaul/hexo-theme-shokaX.git,
 https://github.com/Moarram/headline.git,gitee.com/duchenpaul/headline.git,
 https://github.com/amehime/hexo-theme-shoka.git,gitee.com/duchenpaul/hexo-theme-shoka.git,
 https://github.com/razonyang/hugo-theme-bootstrap-skeleton.git,gitee.com/duchenpaul/hugo-theme-bootstrap-skeleton.git,
