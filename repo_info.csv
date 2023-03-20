@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/JanDeDobbeleer/oh-my-posh.git,gitee.com/duchenpaul/oh-my-posh.git,
 https://github.com/Pilaton/OhMyZsh-full-autoupdate.git,gitee.com/duchenpaul/OhMyZsh-full-autoupdate.git,
 https://github.com/zkz098/awesome-shokaX.git,gitee.com/duchenpaul/awesome-shokaX.git,
 https://github.com/zkz098/hexo-theme-shokaX.git,gitee.com/duchenpaul/hexo-theme-shokaX.git,
