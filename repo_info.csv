@@ -2,7 +2,6 @@ source_repo,target_repo,repo_dir
 https://github.com/cotes2020/jekyll-theme-chirpy.git,gitee.com/duchenpaul/jekyll-theme-chirpy.git,
 https://github.com/adityatelange/hugo-PaperMod.git,gitee.com/duchenpaul/hugo-PaperMod.git,
 https://github.com/nunocoracao/blowfish.git,gitee.com/duchenpaul/hugo-theme-blowfish.git,
-https://git.sainnhe.dev/sainnhe/gitea-themes.git,gitee.com/duchenpaul/sainnhe-gitea-themes.git,
 https://github.com/catppuccin/gitea.git,gitee.com/duchenpaul/catppuccin-gitea.git,
 https://github.com/JanDeDobbeleer/oh-my-posh.git,gitee.com/duchenpaul/oh-my-posh.git,
 https://github.com/Pilaton/OhMyZsh-full-autoupdate.git,gitee.com/duchenpaul/OhMyZsh-full-autoupdate.git,
