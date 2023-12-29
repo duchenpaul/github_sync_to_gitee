@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/qd-today/templates.git,gitee.com/duchenpaul/qd-today-templates.git,
 https://github.com/cotes2020/jekyll-theme-chirpy.git,gitee.com/duchenpaul/jekyll-theme-chirpy.git,
 https://github.com/adityatelange/hugo-PaperMod.git,gitee.com/duchenpaul/hugo-PaperMod.git,
 https://github.com/nunocoracao/blowfish.git,gitee.com/duchenpaul/hugo-theme-blowfish.git,
