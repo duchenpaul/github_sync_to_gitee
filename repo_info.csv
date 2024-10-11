@@ -1,4 +1,5 @@
 source_repo,target_repo,repo_dir
+https://github.com/folke/lazy.nvim.git,gitee.com/duchenpaul/lazy.nvim.git,
 https://github.com/AstroNvim/template.git,gitee.com/duchenpaul/AstroNvim-template.git,
 https://github.com/MichaelAquilina/zsh-you-should-use.git,gitee.com/duchenpaul/zsh-you-should-use.git,
 https://github.com/joshskidmore/zsh-fzf-history-search.git,gitee.com/duchenpaul/zsh-fzf-history-search.git,
