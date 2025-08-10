@@ -1,13 +1,13 @@
 name: OpenWrt mirror to gitee
 
-on: 
+on:
   release:
     types: [published]
   push:
-    branches: 
+    branches:
       - master
   schedule:
-   - cron: 0 */4 * * *
+    - cron: 0 */4 * * *
   watch:
     types: [started]
   workflow_dispatch:
@@ -16,28 +16,26 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     timeout-minutes: 150
-    
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@master
 
-    - name: Download dependencies
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo apt-get update
-        sudo apt-get -y install build-essential nghttp2 libnghttp2-dev libssl-dev
-        pip3 install -r ./requirements.txt
+      - name: Download dependencies
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          sudo apt-get update
+          pip3 install -r ./requirements.txt
 
-    - name: Sync repo
-      uses: nick-fields/retry@v2
-      with:
-        timeout_minutes: 40
-        max_attempts: 3
-        command: |
-          export USERNAME=${{ secrets.USERNAME }}
-          export PASSWORD=${{ secrets.PASSWORD }}
-          export GITEE_PAT=${{ secrets.GITEE_PAT }}
+      - name: Sync repo
+        uses: nick-fields/retry@v2
+        with:
+          timeout_minutes: 40
+          max_attempts: 3
+          command: |
+            export USERNAME=${{ secrets.USERNAME }}
+            export PASSWORD=${{ secrets.PASSWORD }}
+            export GITEE_PAT=${{ secrets.GITEE_PAT }}
 
-          python3 ./sync_repo.py
-
+            python3 ./sync_repo.py
