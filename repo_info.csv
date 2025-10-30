@@ -61,5 +61,6 @@ https://github.com/zsh-users/zsh-completions,gitee.com/duchenpaul/zsh-completion
 https://github.com/zsh-users/zsh-syntax-highlighting,gitee.com/duchenpaul/zsh-syntax-highlighting.git,
 https://github.com/zthxxx/zsh-history-enquirer.git,gitee.com/duchenpaul/zsh-history-enquirer.git,
 https://gitlab.com/duchenpaul/arduinoWebSockets.git,gitee.com/duchenpaul/arduinoWebSockets.git,
-
+https://github.com/actions/checkout.git,gitee.com/duchenpaul/gh-actions-checkout.git,
 https://gitlab.com/Shinobi-Systems/docker-plugin-tensorflow.js,gitee.com/duchenpaul/docker-plugin-tensorflow.js.git,
+
