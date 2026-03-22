@@ -22,6 +22,8 @@ logging.basicConfig(
 
 USERNAME = os.environ["USERNAME"]
 PASSWORD = os.environ["PASSWORD"]
+
+BASE_URL = "https://gitee.com/api/v5"
 GITEE_PAT = os.environ["GITEE_PAT"]
 
 WORKDIR = os.getcwd()
@@ -102,13 +104,27 @@ def sync_repo(source_repo, target_repo, repo_dir=None):
 
 
 def get_all_repo():
-    url = "https://gitee.com/api/v5/user/repos?access_token={GITEE_PAT}&sort=full_name&per_page=100".format(
-        GITEE_PAT=GITEE_PAT
-    )
+    url = f"{BASE_URL}/user/repos?access_token={GITEE_PAT}&sort=full_name&per_page=100"
     resp = requests.get(url)
     response_text = resp.text
     all_repo_dict = json.loads(response_text)
     return [x["name"] for x in all_repo_dict]
+
+
+def make_repo_public(owner, repo_name):
+    url = f"{BASE_URL}/repos/{owner}/{repo_name}"
+    data = {
+        "access_token": GITEE_PAT,
+        "private": False,
+        "name": repo_name
+    }
+
+    resp = requests.patch(url, data=data)
+    if resp.status_code == 200:
+        print(f"[OK] {owner}/{repo_name} is now PUBLIC")
+    else:
+        print(f"[FAIL] {owner}/{repo_name}: {resp.text}")
+
 
 
 @retry(
@@ -122,7 +138,7 @@ def get_all_repo():
     jitter=5,
 )
 def update_repo_info(source_repo, repo_name):
-    url = "https://gitee.com/api/v5/repos/{}/{}".format(USERNAME, repo_name)
+    url = f"{BASE_URL}/repos/{USERNAME}/{repo_name}"
 
     json_data = {
         "access_token": GITEE_PAT,
@@ -142,10 +158,12 @@ def update_repo_info(source_repo, repo_name):
             )
         )
 
+    make_repo_public(USERNAME, repo_name)
+
 
 def create_repo(source_repo, repo_name):
     logging.info("Create new repo {}".format(repo_name))
-    url = "https://gitee.com/api/v5/user/repos"
+    url = f"{BASE_URL}/user/repos"
     json_data = {
         "access_token": GITEE_PAT,
         "name": repo_name,
